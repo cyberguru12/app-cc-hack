@@ -1,0 +1,111 @@
+:root {
+  --bg: #faf7ff;
+  --card: #ffffff;
+  --ink: #1f1634;
+  --muted: #6f638a;
+  --primary: #6d28d9;
+  --primary-dark: #5b21b6;
+  --border: #e9ddff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(180deg, #f6f0ff, var(--bg));
+  color: var(--ink);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 1rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+h1 { margin: 0; }
+.tagline { margin: .25rem 0 0; color: var(--muted); }
+
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(76, 29, 149, 0.08);
+}
+
+.controls {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: .7rem .85rem;
+  border: 1px solid #d7c5fb;
+  border-radius: 10px;
+  margin-top: .35rem;
+  font: inherit;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: .7rem;
+}
+
+textarea { resize: vertical; }
+
+.poems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.poem-card { padding: 1rem; }
+.poem-title { margin-top: 0; margin-bottom: .4rem; }
+.poem-meta, .poem-tags, .status { color: var(--muted); margin-top: 0; }
+.poem-body {
+  white-space: pre-wrap;
+  font-family: "Georgia", serif;
+  margin: .8rem 0;
+}
+
+.btn {
+  border: none;
+  background: var(--primary);
+  color: white;
+  border-radius: 10px;
+  padding: .65rem .9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover { background: var(--primary-dark); }
+.btn-secondary { background: #ede9fe; color: #4c1d95; }
+.btn-secondary:hover { background: #ddd6fe; }
+.topbar-actions { display: flex; gap: .6rem; }
+
+#adminDialog {
+  width: min(680px, 95vw);
+  border: none;
+  border-radius: 16px;
+  padding: 0;
+}
+
+.admin-form { padding: 1rem; }
+.help { color: var(--muted); margin-top: 0; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: .6rem; }
+
+@media (max-width: 640px) {
+  .topbar { flex-direction: column; align-items: flex-start; }
+}
